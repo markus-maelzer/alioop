@@ -1,0 +1,113 @@
+// main: ../index.scss
+
+html {
+  font-size: 16px;
+  @include respond-to($medium) {
+    font-size: calc(16px + .1vw);
+  };
+  @include respond-to($extra-large) {
+    font-size: 17px;
+  };
+  background-color: $color-primary;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size;
+  font-family: $font-primary;
+  line-height: $font-line-height-primary;
+  color: $font-color-primary;
+  font-weight: 300;
+  width: 100%;
+  background-color: $color-primary;
+
+  &.dark {
+    background-color: $color-primary-dark;
+  }
+  &.noscroll {
+    overflow: hidden;
+    padding-right: 8px;
+  }
+  &.no-webkit.noscroll {
+    padding-right: 17px;
+  }
+}
+
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &::before,
+  &::after {
+    @include transition(0.3s);
+    box-sizing: border-box;
+  }
+}
+
+@include selection() {
+  color: $selection-color;
+  background-color: $selection-bg-COLOR;
+};
+
+.pointer {
+  cursor: pointer;
+}
+.inline-block {
+  display: inline-block;
+}
+.block {
+  display: block;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+section {
+  overflow: hidden;
+  transition: 0.4s ease-in;
+  padding: 40px 0;
+  z-index: 2;
+
+
+  @include respond-to($medium) {
+    padding: 40px 0 40px;
+    &.mp {
+      padding: 100px 0 100px;
+    }
+  };
+
+}
+
+.cookie {
+  &__popup {
+    z-index: 102;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 24px;
+    background-color: $color-primary;
+    border-top: 2px solid $color-accent;
+    transform: translateY(24px);
+    transition: 0.3s ease;
+
+    &.visible {
+      transform: translateY(0);
+    }
+
+    p {
+      width: calc(100% - 400px);
+    }
+  }
+}
