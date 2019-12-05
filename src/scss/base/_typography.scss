@@ -1,0 +1,86 @@
+// main: ../index.scss
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  font-weight: 700;
+  font-stretch: condensed;
+  padding: 0;
+  line-height: 1.2;
+  margin: 8px 0;
+  color: inherit;
+}
+
+a {
+  @include transition();
+  color: $color-accent;
+
+  &:active {
+    color: none;
+  }
+}
+
+span {
+  display: inline-block;
+}
+
+.main-title {
+  line-height: 1.2;
+  font-size: calc(4vw + 1rem);
+  @include respond-to($medium-large) {
+    font-size: calc(4.8vw + 3rem);
+    line-height: 1.0625;
+    padding-bottom: 20px;
+  };
+
+  &.outline {
+    transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
+    // -webkit-text-stroke: 2px $font-color-primary;
+    color: transparent;
+    // span {
+    //   -webkit-text-stroke: 0;
+    // }
+
+    &.anim {
+      color: $font-color-primary;
+    }
+  }
+
+  .about-me {
+    width: 100%;
+
+    &:nth-last-child(2) {
+      padding-right: 25%;
+    }
+    &:nth-last-child(3) {
+      padding-right: 50%;
+    }
+  }
+}
+
+.text-main, p {
+  font-family: $font-secondary;
+}
+
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// align classes
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-justify {
+  text-align: justify;
+}
+.align-justify-center {
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+}
