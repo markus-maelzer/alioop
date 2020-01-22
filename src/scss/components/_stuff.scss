@@ -1,1 +1,175 @@
 //main: ../index.scss
+
+.hero-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+p .link {
+  text-decoration: underline;
+}
+
+.link:not(.btn) {
+  transition: 0.3s;
+
+  &:hover {
+    color: $color-turquaz !important;
+  }
+}
+.pp-form {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.error {
+  color: $color-red;
+}
+.success {
+  color: $success;
+}
+
+#root {
+  background: #fff;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+.legal-links {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-weight: 600;
+
+  a,
+  div {
+    color: #fff;
+    margin-right: 12px;
+
+    &:hover {
+      color: $color-turquaz;
+    }
+  }
+}
+
+.legal p {
+  width: 100%;
+}
+
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin-top: 40px;
+}
+
+.map-box__container {
+  width: 100%;
+  height: 400px;
+}
+@media all and (min-width: 998px) {
+  .map-box__container {
+    height: 680px;
+  }
+  .contact-form__container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 620px;
+
+    #contact {
+      margin-left: auto;
+      margin-right: -200px;
+    }
+  }
+}
+
+.cookie-notice {
+  max-width: 780px;
+  max-height: 100%;
+  width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .checkbox-container {
+    margin-bottom: 10px;
+    background-color: #ebebeb;
+    padding: 15px;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+  .form-group:last-of-type {
+    margin: 0;
+  }
+
+  .btn {
+    width: 230px;
+    margin: 10px 10px 0;
+
+    &:last-child,
+    &:first-child {
+      margin: 10px 0 0;
+    }
+  }
+}
+@media all and (max-width: 800px) {
+  footer a.link {
+    min-height: 48px;
+    display: inline-flex;
+    min-width: 48px;
+    align-items: center;
+  }
+  .cookie-notice .btn-container {
+    justify-content: center;
+  }
+}
+@media all and (max-width: 530px) {
+  .cookie-notice {
+    .btn {
+      margin: 10px 0 0;
+      width: 100%;
+    }
+    padding-bottom: 120px;
+    .checkbox-container {
+      flex-flow: column wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+  }
+}
+@media all and (min-width: 767px) {
+  .hero-content {
+    padding-left: 50px;
+  }
+}

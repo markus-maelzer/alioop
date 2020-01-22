@@ -8,16 +8,15 @@
     $animations: #{$animations + nth($animate, $i)};
 
     @if $i < $max {
-      $animations: #{$animations + ", "};
+      $animations: #{$animations + ', '};
     }
   }
   -webkit-animation: $animations;
   -webkit-animation-fill-mode: forwards;
-  -moz-animation:    $animations;
-  -moz-animation-fill-mode:    forwards;
-  animation:         $animations;
-  animation-fill-mode:         forwards;
-
+  -moz-animation: $animations;
+  -moz-animation-fill-mode: forwards;
+  animation: $animations;
+  animation-fill-mode: forwards;
 }
 
 @mixin keyframes($animationName) {
@@ -130,9 +129,9 @@
 }
 
 // TRANSITION
-@mixin transition($vals: all 0.3s ease) {
-  transition: $vals;
-}
+// @mixin transition($vals: all 0.3s ease) {
+//   transition: $vals;
+// }
 
 // TRANSFORM ORIGIN
 @mixin transform-origin($vals: 50% 50%) {
@@ -162,18 +161,22 @@
 }
 
 @mixin selection {
-  ::-moz-selection { @content; }
-  ::selection { @content; }
+  ::-moz-selection {
+    @content;
+  }
+  ::selection {
+    @content;
+  }
 }
 
 @mixin transform($vals) {
-  @include prefix('transform', $vals)
+  @include prefix('transform', $vals);
 }
 
 @mixin clearfix {
   &::after {
     clear: both;
-    content: "";
+    content: '';
     display: block;
   }
 }
@@ -188,4 +191,62 @@
   @-moz-keyframes #{$name} {
     @content;
   }
+}
+
+@mixin font-one {
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin font-two {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+@mixin font-render {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin transition {
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+@mixin transition-cubic {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  transition-duration: 700ms;
+  -webkit-transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@mixin transition-cubic-second {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@mixin blur {
+  -webkit-filter: blur(25px);
+  -moz-filter: blur(25px);
+  -o-filter: blur(25px);
+  -ms-filter: blur(25px);
+  filter: blur(25px);
+}
+
+@mixin no-blur {
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: blur(0);
 }

@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-import Nav from '../components';
+// import { withGA } from 'components/utility';
+import { Footer } from './footer';
+import { Nav } from './nav';
+import { Loader, LoaderContextProvider } from './loader';
 
-import AboutMe from '../pages/about-me';
-import Projects from '../pages/projects';
-import ProjectsSingle from '../pages/projects-single';
-// import SmoothScrollTest from '../components/smooth-scroll/smooth-stroll-test';
-
-import { Footer } from '../components';
-import { WindowLoaded } from './window-loaded';
-import { FollowCircle, FollowCircleProvider } from '../components/follow-circle';
+import { FollowCircleProvider } from '../components/follow-circle';
+const Home = React.lazy(() => import('../pages/Home'));
+const ProjectSingle = React.lazy(() => import('../pages/ProjectSingle'));
+const Error404 = React.lazy(() => import('../pages/404'));
 
 export default class MainRouter extends Component {
   componentDidMount() {
@@ -24,26 +24,37 @@ export default class MainRouter extends Component {
       /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
     if (!isChrome && !isSafari) {
-      document.body.add('no-webkit');
+      document.body.classList.add('no-webkit');
     }
   };
 
   render() {
     return (
-      <FollowCircleProvider>
-        <FollowCircle />
-        <div className="main-content">
-          <Switch>
-            <Route
-              path="/projects/:id"
-              component={WindowLoaded(ProjectsSingle, 300)}
-            />
-            {/* <Route path="/about-me" component={WindowLoaded(AboutMe, 300)} /> */}
-            <Route exact path="/" component={WindowLoaded(Projects, 300)} />
-          </Switch>
-        </div>
-        <Footer />
-      </FollowCircleProvider>
+      <LoaderContextProvider>
+        <FollowCircleProvider>
+          <Loader />
+          <Helmet>
+            <html lang="de" />
+            <title>Nikolas Cetls | Portfolio</title>
+            <meta charset="utf-8" />
+            <meta name="author" content="Markus Mälzer" />
+            <meta name="description" content="" />
+          </Helmet>
+
+          <Nav />
+          <Suspense fallback={null}>
+            <div className="main-content">
+              <Switch>
+                <Route exact path="/project/:slug" component={ProjectSingle} />
+                {/* <Route exact path="/legal/:slug" component={withGA(Legal)} /> */}
+                <Route exact path="/" component={Home} />
+                <Route component={Error404} />
+              </Switch>
+            </div>
+          </Suspense>
+          <Footer />
+        </FollowCircleProvider>
+      </LoaderContextProvider>
     );
   }
 }

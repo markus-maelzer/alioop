@@ -1,7 +1,12 @@
 // main: ../index.scss
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-secondary;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
   font-weight: 700;
   font-stretch: condensed;
   padding: 0;
@@ -30,7 +35,7 @@ span {
     font-size: calc(4.8vw + 3rem);
     line-height: 1.0625;
     padding-bottom: 20px;
-  };
+  }
 
   &.outline {
     transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
@@ -57,10 +62,10 @@ span {
   }
 }
 
-.text-main, p {
+.text-main,
+p {
   font-family: $font-secondary;
 }
-
 
 .uppercase {
   text-transform: uppercase;

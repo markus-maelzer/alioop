@@ -1,13 +1,14 @@
 .circle {
+  $dim: 65px;
   $self: &;
-  width: 50px;
-  height: 50px;
+  width: $dim;
+  height: $dim;
   position: fixed;
   top: 0;
   left: 0;
-  margin-left: -25px;
-  margin-top: -25px;
-  z-index: 100;
+  margin-left: calc(-#{$dim} / 2);
+  margin-top: calc(-#{$dim} / 2);
+  z-index: 1000;
   pointer-events: none;
   border-radius: 50%;
   mix-blend-mode: difference;
@@ -16,17 +17,53 @@
     background-color: #fff;
     transform-origin: center;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    transition: 0.5s cubic-bezier(1, 0, 0, 1);
+    width: $dim;
+    height: $dim;
+    transition: 0.25s ease;
+    transform: scale(0.154);
   }
 
-  &.scale #{$self}__content {
-    transform: scale(100);
+  &.scale {
+    mix-blend-mode: none;
+    #{$self}__content {
+      // background-color: rgba(232, 41, 59, 0.15);
+      // box-shadow: 0 0 30px rgba(232, 41, 59, 0.8);
+      background-color: rgba(0, 247, 182, 0.15);
+      box-shadow: 0 0 30px rgba(0, 247, 182, 0.8);
+      transform: scale(1);
+    }
   }
 
   &.color-change .circle__content {
     background-color: burlywood;
+  }
+
+  @media all and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.is-ie .circle {
+  display: none;
+}
+body {
+  @media all and (min-width: 768px) {
+    &,
+    .pointer,
+    a,
+    label,
+    button {
+      cursor: none !important;
+    }
+    &.is-ie {
+      &,
+      .pointer,
+      a,
+      label,
+      button {
+        cursor: auto !important;
+      }
+    }
   }
 }
 

@@ -3,27 +3,35 @@
 fieldset {
   border: 0;
 }
-input, textarea {
+input,
+textarea {
   font-family: $font-primary;
   line-height: $font-line-height-primary;
   font-size: $font-size;
 }
 
-img {
-  display: block;
-  width: 100%;
-}
+// img {
+//   display: block;
+//   width: 100%;
+// }
 
 hr {
   border: 0;
 }
 
-button, input, textarea, select, li, svg, div {
+button,
+input,
+textarea,
+select,
+li,
+svg,
+div {
   outline: none;
   border: none;
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 

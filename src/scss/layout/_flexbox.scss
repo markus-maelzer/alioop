@@ -90,7 +90,6 @@
   }
 }
 
-
 @each $media-query, $media-short in $media-list {
   .order-#{$media-short}-last {
     @extend .order-last;

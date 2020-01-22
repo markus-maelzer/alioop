@@ -1,8 +1,14 @@
 // main: ../index.scss
 
 // FONT STUFF
-$font-primary: 'Work Sans', serif;
-$font-secondary: 'Taviraj', sans-serif;
+$font-primary: 'Poppins', serif;
+$font-secondary: 'Fjalla One', sans-serif;
+$font-tertiary: 'Fjalla One', sans-serif;
+
+$color-dark: #0e0e0e;
+$color-dark-2: #181818;
+$color-red: #e8293b;
+$color-turquaz: #01f7b6;
 
 $font-size: 0.9rem;
 $font-line-height-primary: 1.5;
@@ -26,7 +32,7 @@ $color-tertiary-dark: rgba(255, 255, 255, 0.75);
 
 $color-accent: #ff6a6a;
 
-$success: rgb(105, 255, 74);
+$success: darkgreen;
 $error: rgb(255, 64, 64);
 
 $selection-color: $font-color-accent;

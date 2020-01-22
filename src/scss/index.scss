@@ -1,30 +1,28 @@
-@import "base/fonts";
+@import 'base/fonts';
 
-@import "utils/mixins";
-@import "utils/media-querys";
-@import "utils/variables";
+@import 'utils/mixins';
+@import 'utils/media-querys';
+@import 'utils/variables';
+@import 'utils/easings';
 
-@import "base/base";
-@import "base/normalize";
-@import "base/typography";
-@import "base/colors";
+@import 'base/base';
+@import 'base/normalize';
+// @import 'base/typography';
+// @import 'base/colors';
 
-@import "layout/flexbox";
-@import "layout/grid";
-@import "layout/basic-layouts";
+@import 'layout/flexbox';
+@import 'layout/grid';
+@import 'layout/basic-layouts';
 
-@import "singleStyles/shadows";
-@import "singleStyles/scrollable";
-@import "singleStyles/overlay";
+@import 'singleStyles/shadows';
+@import 'singleStyles/scrollable';
+@import 'singleStyles/overlay';
 
-@import "components/stuff";
-@import "components/project";
-@import "components/follow-circle";
-
-.noscroll {
-  overflow: hidden;
-}
-
-.scrolltainer > * {
-  height: 100%;
-}
+@import 'components/brabus';
+@import 'components/stuff';
+@import 'components/inView';
+@import 'components/gallery';
+@import 'components/follow-circle';
+@import 'components/goo';
+@import 'components/nav';
+@import 'components/glitch';

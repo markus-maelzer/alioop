@@ -1,0 +1,28 @@
+//main: ../index.scss
+
+.inView-overlayBox {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+
+  div.overlayBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    // background-color: #01f7b6;
+    transition: 1s cubic-bezier(0.86, 0, 0.07, 1);
+    transform-origin: right;
+  }
+  // 1s cubic-bezier(.86, 0, .07, 1)
+
+  &.inView {
+    div.overlayBox {
+      transform: scaleX(0);
+      transition-delay: 0.2s;
+    }
+  }
+}
