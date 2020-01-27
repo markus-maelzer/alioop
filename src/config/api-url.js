@@ -3,8 +3,8 @@ const GenerateApiUrls = function() {
     process.env.NODE_ENV === 'development'
       ? 'https://shopware.synelution.com/'
       : 'https://shopware.synelution.com/';
-  const ROOT_URL = '/cockpit-master';
-  const API_TOKEN = '?token=d0efd548627e3ae31fb77ef89cfc6d';
+  const ROOT_URL = '/cockpit-alex';
+  const API_TOKEN = '?token=50467672eb383200da6b63823548c3';
   // const DOMAIN =
   //   process.env.NODE_ENV === 'development'
   //     ? 'https://synelution.com'

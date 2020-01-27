@@ -6,22 +6,24 @@ import { HoverBox } from './HoverBox';
 
 import { InViewOverlayBox, InViewOverlayBoxSplitter } from 'components/animators';
 
-export const Services = ({ services }) => (
+export const Services = ({ services, projectsTitle }) => (
   <BgColorContainer className="works">
     {(setBgColor, defaultBgColor) => (
       <div className="container">
         <div className="row">
           <div className="col-12 wow fadeIn">
             <h6>
-              <InViewOverlayBox>LOREM IPSUM DOLOR</InViewOverlayBox>
+              <InViewOverlayBox>{projectsTitle.subtitle}</InViewOverlayBox>
             </h6>
             <h2 style={{ position: 'relative' }}>
               <div className="bg-text">
                 <InViewOverlayBox color="#fff" delay=".3s">
-                  Work
+                  {projectsTitle.bgTitle}
                 </InViewOverlayBox>
               </div>
-              <InViewOverlayBoxSplitter>Lorem Ipsum</InViewOverlayBoxSplitter>
+              <InViewOverlayBoxSplitter>
+                {projectsTitle.title}
+              </InViewOverlayBoxSplitter>
             </h2>
           </div>
           <div className="col-12">

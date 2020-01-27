@@ -35,7 +35,7 @@ export default class MainRouter extends Component {
           <Loader />
           <Helmet>
             <html lang="de" />
-            <title>Nikolas Cetls | Portfolio</title>
+            <title>Alexander Pettenhofer | Portfolio</title>
             <meta charset="utf-8" />
             <meta name="author" content="Markus Mälzer" />
             <meta name="description" content="" />

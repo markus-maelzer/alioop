@@ -44,20 +44,21 @@ const Home = props => {
     if (!loaded) setLoaded({ loaded: true });
   }, [entries, state]);
   if (!state || !entries) return null;
-  console.log(state);
+  const { header, galleryTitle, projectsTitle } = state;
 
   return (
     <>
       <ParallaxFadeWhite>
-        <Header type="img" src={Img}>
+        <Header type="img" src={API_URL.DOMAIN + header.img.path}>
           <div className="tagline">
             <span></span>
-            <h4>Hey, my name is</h4>
+            <h4>{header.topTitle}</h4>
           </div>
           <h1>
-            Nicolas
+            {header.title}
+            <br />
             <span style={{ display: 'inline', marginLeft: 0, transform: 'none' }}>
-              Cetl
+              {header.subtitle}
             </span>
             {/* <br /> */}
             {/*  */}
@@ -67,21 +68,23 @@ const Home = props => {
       </ParallaxFadeWhite>
       <Intro {...state.intro} />
       <ZwischenSection {...state.zwischen} />
-      <Services services={entries} />
+      <Services services={entries} projectsTitle={projectsTitle} />
       <section className="intro">
         <div className="container">
           <div className="row"></div>
           <div className="col-12 wow fadeIn">
             <h6>
-              <InViewOverlayBox>More Projects</InViewOverlayBox>
+              <InViewOverlayBox>{galleryTitle.subtitle}</InViewOverlayBox>
             </h6>
             <h2>
               <div className="bg-text">
                 <InViewOverlayBox color="#fff" delay=".3s">
-                  More
+                  {galleryTitle.bgTitle}
                 </InViewOverlayBox>
               </div>
-              <InViewOverlayBoxSplitter>More</InViewOverlayBoxSplitter>
+              <InViewOverlayBoxSplitter>
+                {galleryTitle.title}
+              </InViewOverlayBoxSplitter>
             </h2>
           </div>
         </div>
